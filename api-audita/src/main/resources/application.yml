@@ -1,0 +1,42 @@
+---
+
+springdoc:
+  swagger-ui:
+    operationsSorter: alpha
+    doc-expansion: none
+    tagsSorter: alpha
+spring:
+  #main:
+     #web-application-type: none
+  jpa:
+    generate-ddl: 'true'
+    hibernate:
+      ddl-auto: update
+    open-in-view: 'false'
+    properties:
+      hibernate:
+        format_sql: 'true'
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
+  mvc:
+    throw-exception-if-no-handler-found: true
+  h2:
+    console:
+      path: /h2-console
+      enabled: 'true'
+  datasource:
+    password: ''
+    driver-class-name: org.h2.Driver
+    username: sa
+    url: jdbc:h2:mem:testdb
+    configuration:
+      poolName: H2-Default-Pool
+server:
+  error:
+    whitelabel:
+      enabled: false
+  servlet:
+    context-path: /api
+cors:
+  origins: http://localhost:4200
